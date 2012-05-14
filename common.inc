@@ -14,8 +14,16 @@ function openid_selector_load_assets ($options = array()){
         template::setCss($css);
         $openid_js =  "/templates/openid-selector/js/openid-jquery.js";
         template::setJs($openid_js, null, array ('head' => true));
-        $openid_lang = "/templates/openid-selector/js/openid-en.js";
-        template::setJs($openid_lang, null, array ('head' => true));   
+        $openid_lang = "/templates/openid-selector/js/openid-$lang.js";
+        
+        if (file_exists(_COS_PATH . "/htdocs/$openid_lang")) {
+            $lang_file = $openid_lang;
+            
+        } else {
+            $lang_file = "/templates/openid-selector/js/openid-de.js"; 
+        }
+        
+        template::setJs($lang_file, null, array ('head' => true));   
         
         $openid_run = "/templates/openid-selector/run.js";
         template::setJs($openid_run, null, array ('head' => true)); 
@@ -24,15 +32,18 @@ function openid_selector_load_assets ($options = array()){
 }
 
 function openid_selector_get_form () {
-
+    //lang::loadModuleLanguage($module);
+    $lang_login = lang::translate('account_login_open_id_legend');
+    $select_provider = lang::translate('account_openid_select_provider');
     $str = <<<EOF
 	<!-- Simple OpenID Selector -->
+            
 	<form action="/account/lightopenid/index" method="get" id="openid_form">
 		<input type="hidden" name="action" value="verify" />
 		<fieldset>
-			<legend>Sign-in or Create New Account</legend>
+			<legend>$lang_login</legend>
 			<div id="openid_choice">
-				<p>Please click your account provider:</p>
+				<p>$select_provider</p>
 				<div id="openid_btns"></div>
 			</div>
 			<div id="openid_input_area">
