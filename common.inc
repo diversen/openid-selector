@@ -9,6 +9,7 @@ function openid_selector_load_assets ($options = array()){
     static $loaded = null;
     if (!$loaded) {
         $lang = config::getMainIni('language');
+        include_module('account/login');
         
         $css = "/templates/openid-selector/css/openid.css";
         template::setCss($css);
@@ -37,6 +38,8 @@ function openid_selector_get_form () {
     $select_provider = lang::translate('account_openid_select_provider');
     $checkbox = html::checkboxClean('keep_session', 1);
     
+    $keep_session = view_account_keep_session_clean();
+    
     $str = <<<EOF
 	<!-- Simple OpenID Selector -->
             
@@ -46,7 +49,7 @@ function openid_selector_get_form () {
 			<legend>$lang_login</legend>
                         
 
-                        $checkbox
+                        $keep_session
 			<div id="openid_choice">
 				<p>$select_provider</p>
 				<div id="openid_btns"></div>
