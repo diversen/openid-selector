@@ -9,7 +9,7 @@ function openid_selector_load_assets ($options = array()){
     static $loaded = null;
     if (!$loaded) {
         $lang = config::getMainIni('language');
-        include_module('account/login');
+        moduleloader::includeModule('account/login');
         
         $css = "/templates/openid-selector/css/openid.css";
         template::setCss($css);
