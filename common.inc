@@ -47,7 +47,7 @@ function view_account_keep_session_clean () {
     
     $str = '';
     $str.=html::labelClean('keep_session', $keep_session_label);
-    $str.=html::checkboxClean('keep_session');
+    $str.=html::checkboxClean('keep_session', 1);
     return $str;
 }
 
@@ -55,7 +55,7 @@ function openid_selector_get_form () {
     //lang::loadModuleLanguage($module);
     $lang_login = lang::translate('account_login_open_id_legend');
     $select_provider = lang::translate('account_openid_select_provider');
-    $checkbox = html::checkboxClean('keep_session', 1);
+    //$checkbox = html::checkboxClean('keep_session', 1);
     
     $keep_session = view_account_keep_session_clean();
     
