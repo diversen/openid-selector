@@ -37,11 +37,11 @@ function openid_selector_load_assets ($options = array()){
  * @return string $str 
  */
 function view_account_keep_session_clean () {
-    $keep_session_label = lang::translate('account_keep_session');
+    $keep_session_label = lang::translate('Let me stay logged in');
     $days = config::getMainIni('cookie_time'); 
 
     if ($days > 0 ) {
-        $keep_session_label.= ' ' .  $days . ' ' . lang::translate('account_num_days'); 
+        $keep_session_label.= ' ' .  $days . ' ' . lang::translate('days'); 
         
     }
     
@@ -53,8 +53,8 @@ function view_account_keep_session_clean () {
 
 function openid_selector_get_form () {
     //lang::loadModuleLanguage($module);
-    $lang_login = lang::translate('account_login_open_id_legend');
-    $select_provider = lang::translate('account_openid_select_provider');
+    $lang_login = lang::translate('Log in with openID');
+    $select_provider = lang::translate('Choose provider');
     //$checkbox = html::checkboxClean('keep_session', 1);
     
     $keep_session = view_account_keep_session_clean();
