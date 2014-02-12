@@ -55,9 +55,11 @@ function openid_selector_get_form () {
     //lang::loadModuleLanguage($module);
     $lang_login = lang::translate('Log in with openID');
     $select_provider = lang::translate('Choose provider');
-    //$checkbox = html::checkboxClean('keep_session', 1);
     
     $keep_session = view_account_keep_session_clean();
+    $captcha = html::labelClean('captcha', captcha::createCaptcha());
+    $captcha.= html::textClean('captcha');
+    // $captcha
     
     $str = <<<EOF
 	<!-- Simple OpenID Selector -->
@@ -68,11 +70,13 @@ function openid_selector_get_form () {
 			<legend>$lang_login</legend>
                         
 
-                        $keep_session
+                        $keep_session</br>
+                        
 			<div id="openid_choice">
 				<p>$select_provider</p>
 				<div id="openid_btns"></div>
 			</div>
+                        
 			<div id="openid_input_area">
                         
 				<input id="openid_identifier" name="openid_identifier" type="text" value="http://" />
