@@ -70,7 +70,7 @@ function openid_selector_get_form () {
 			<legend>$lang_login</legend>
                         
 
-                        $keep_session</br>
+                        $keep_session
                         
 			<div id="openid_choice">
 				<p>$select_provider</p>
