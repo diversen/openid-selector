@@ -36,8 +36,7 @@
 	width: 100px;
 	height: 60px;
 /* fix for IE 6 only: http://en.wikipedia.org/wiki/CSS_filter#Underscore_hack */
-	_width: 102px;
-	_height: 62px;
+
 
 	border: 1px solid #DDD;
 	margin: 3px;
@@ -48,8 +47,7 @@
 	width: 24px;
 	height: 24px;
 /* fix for IE 6 only: http://en.wikipedia.org/wiki/CSS_filter#Underscore_hack */
-	_width: 26px;
-	_height: 26px;
+
 
 	border: 1px solid #DDD;
 	margin: 3px;

@@ -21,7 +21,7 @@ function openid_selector_load_assets ($options = array()){
             $lang_file = $openid_lang;
             
         } else {
-            $lang_file = "/templates/openid-selector/js/openid-de.js"; 
+            $lang_file = "/templates/openid-selector/js/openid-en.js"; 
         }
         
         template::setJs($lang_file, null, array ('head' => true));   
