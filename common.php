@@ -57,8 +57,6 @@ function openid_selector_get_form () {
     $select_provider = lang::translate('Choose provider');
     
     $keep_session = view_account_keep_session_clean();
-    $captcha = html::labelClean('captcha', captcha::createCaptcha());
-    $captcha.= html::textClean('captcha');
     // $captcha
     
     $str = <<<EOF
