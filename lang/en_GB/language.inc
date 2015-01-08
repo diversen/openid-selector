@@ -1,7 +1,7 @@
 <?php
 
 
-// Translation of file /htdocs/templates/openid-selector/common.inc
+// Translation of file /htdocs/templates/openid-selector/common.php
 
 $_COS_LANG_MODULE['Let me stay logged in'] = 'Let me stay logged in';
 $_COS_LANG_MODULE['days'] = 'days';
