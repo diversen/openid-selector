@@ -8,7 +8,7 @@ function openid_selector_load_assets ($options = array()){
     // flag to check if editor has been loaded
     static $loaded = null;
     if (!$loaded) {
-        $lang = config::getMainIni('language');
+        $lang = conf::getMainIni('language');
         //moduleloader::includeModule('account/login');
         lang::loadTemplateLanguage('openid-selector');
         $css = "/templates/openid-selector/css/openid.css";
@@ -38,7 +38,7 @@ function openid_selector_load_assets ($options = array()){
  */
 function view_account_keep_session_clean () {
     $keep_session_label = lang::translate('Let me stay logged in');
-    $days = config::getMainIni('cookie_time'); 
+    $days = conf::getMainIni('cookie_time'); 
 
     if ($days > 0 ) {
         $keep_session_label.= ' ' .  $days . ' ' . lang::translate('days'); 
