@@ -17,7 +17,7 @@ function openid_selector_load_assets ($options = array()){
         template::setJs($openid_js, null, array ('head' => true));
         $openid_lang = "/templates/openid-selector/js/openid-$lang.js";
         
-        if (file_exists(_COS_HTDOCS . "/$openid_lang")) {
+        if (file_exists(conf::pathHtdocs() . "/$openid_lang")) {
             $lang_file = $openid_lang;
             
         } else {
